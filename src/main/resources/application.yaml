@@ -1,0 +1,6 @@
+mqtt:
+  client-id-inbound: rms-inbound-test
+  client-id-outbound: rms-outbound-test
+  url: tcp://192.168.103.30:1883
+  username: rms
+  password: 123456
