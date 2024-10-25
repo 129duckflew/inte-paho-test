@@ -6,8 +6,6 @@ question link: https://stackoverflow.com/questions/79112339/paho-client-exceptio
     ```yaml
     version: '3.1'
     networks:
-      rms-network:
-        external: true
     services:
       emqx:
         container_name: emqx
@@ -19,8 +17,6 @@ question link: https://stackoverflow.com/questions/79112339/paho-client-exceptio
           - 18083:18083
         volumes:
           - emqx_local:/opt/emqx
-        networks:
-          - rms-network
         restart: always
     volumes:
       emqx_local:
