@@ -5,7 +5,6 @@ question link: https://stackoverflow.com/questions/79112339/paho-client-exceptio
 1. Start an mqtt broker instance on port 1883 of the local machine. I am using emqx here.
     ```yaml
     version: '3.1'
-    networks:
     services:
       emqx:
         container_name: emqx
