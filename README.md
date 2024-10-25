@@ -25,8 +25,17 @@ question link: https://stackoverflow.com/questions/79112339/paho-client-exceptio
     volumes:
       emqx_local:
      ```
-2. Start the SpringBoot program
-3. Request the /test interface on port 8080 of the local machine and pass in the parameter num=100,000
+2. Update the IP address of the mqtt broker server in the SpringBoot configuration file and the IP address corresponding to the docker service.
+    ```yaml
+    mqtt:
+      client-id-inbound: rms-inbound-test
+      client-id-outbound: rms-outbound-test
+      url: tcp://${your_ip}:1883
+      username: rms
+      password: 123456
+    ```
+3. Start the SpringBoot program
+4. Request the /test interface on port 8080 of the local machine and pass in the parameter num=100,000
 Follow the steps above and we will receive a `Caused by: Internal error, caused by no new message IDs being available (32001)`
 ```bash
 curl -X POST "http://127.0.0.1:8080/test?num=100000"
