@@ -28,3 +28,6 @@ question link: https://stackoverflow.com/questions/79112339/paho-client-exceptio
 2. Start the SpringBoot program
 3. Request the /test interface on port 8080 of the local machine and pass in the parameter num=100,000
 Follow the steps above and we will receive a `Caused by: Internal error, caused by no new message IDs being available (32001)`
+```bash
+https://github.com/129duckflew/inte-paho-test
+```
