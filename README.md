@@ -3,7 +3,7 @@ question link: https://stackoverflow.com/questions/79112339/paho-client-exceptio
 
 ## Test method:
 1. Start an mqtt broker instance on port 1883 of the local machine. I am using emqx here.
-   ```yaml
+```yaml
 version: '3.1'
 networks:
   rms-network:
@@ -24,8 +24,7 @@ services:
     restart: always
 volumes:
   emqx_local:
-
-   ```
+ ```
 3. Start the SpringBoot program
 4. Request the /test interface on port 8080 of the local machine and pass in the parameter num=100,000
 Follow the steps above and we will receive a `Caused by: Internal error, caused by no new message IDs being available (32001)`
