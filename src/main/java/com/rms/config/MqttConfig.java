@@ -20,6 +20,7 @@ import org.springframework.messaging.MessageHandler;
 import org.springframework.messaging.converter.*;
 
 import java.util.concurrent.Executors;
+import java.util.concurrent.locks.LockSupport;
 
 
 @Configuration
@@ -90,6 +91,8 @@ public class MqttConfig {
                 .channel(MessageChannels.executor(Executors.newVirtualThreadPerTaskExecutor()))
                 .transform(Transformers.objectToString())
                 .handle(message -> {
+                    //db operation
+                    LockSupport.parkNanos(1000000000);
                     log.info("get msg:{}", message);
                 })
                 .get();
